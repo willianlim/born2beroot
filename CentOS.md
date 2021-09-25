@@ -17,4 +17,11 @@
   * [2.3. Special features](#heading--2-3)
 
 
-hnfghrfgjfdudfghfdhr
+
+<!-- MarkdownTOC -->
+
+1. [Helpful Links:](#helpful-links)
+1. [Sublime Text Settings:](#sublime-text-settings)
+1. [Packages to install](#packages-to-install)
+
+<!-- /MarkdownTOC -->
