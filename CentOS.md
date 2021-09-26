@@ -15,6 +15,15 @@
 </b></h3>
 	<span> • </span><a href="#Overview">2.1 Overview</br></a>
 	<span> • </span><a href="#CentOS vs Debian">2.2 CentOS vs Debian</br></a>
+<h3><b>
+	<a href="#SELinux">3. SELinux</br></a>
+</b></h3>
+	<span> • </span><a href="#SEl">3.1 Overview</br></a>
+
+<h3><b>
+	<a href="#SSH">4. SSH</br></a>
+</b></h3>
+	<span> • </span><a href="#SS">4.1 Overview</br></a>
 
 <h3><b>
 	<a href="#ref">References</br></a>
@@ -83,6 +92,20 @@ Mission-critical servers are hosted on CentOS|Ubuntu is fast catching up. A lot 
 Usually, it is very difficult to upgrade a version of CentOS locally. Official sources recommend installing a newer version then to upgrade an older one.|Upgrading Debian from one stable version to another is easy and not painf
 It does not have an easy GUI. | It has desktop friendly applications and GUI.
 The core software of CentOS, such as the RHEL/CentOS components, also the kernel and all its utilities, come from the distribution, while the add-on software like Apache, PHP, Java, and MySQL come from newer sources such as Fedora or from vendors directly such as MySQL | A real reason to use Debian is if they provide unique functionality that is necessary for a system; in such cases switching to Debian makes sense. Apt repositories in package managers have the latest source code for several open-source languages and frameworks like ruby, rails, PostgreSQL, Golang, selenium, angular2-dart etc. Ubuntu is very suitable to work with when using Docker file/s docker containers.
+
+<h2 align=center id="SELinux">
+SELinux
+</h2>
+<h2 id="SEl">
+Overview
+</h2>
+
+<p>
+
+- Security-Enhanced Linux (SELinux) is a mandatory access control (MAC) security mechanism implemented in the kernel. SELinux was first introduced in CentOS 4 and significantly enhanced in later CentOS releases. These enhancements mean that content varies as to how to approach SELinux over time to solve problems.
+- SSH, also known as Secure Shell or Secure Socket Shell, is a network protocol that gives users, particularly system administrators, a secure way to access a computer over an unsecured network.
+</p>
+
 
 <h2 id="ref">
 	<b>References</b>
