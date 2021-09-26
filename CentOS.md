@@ -92,4 +92,9 @@ The core software of CentOS, such as the RHEL/CentOS components, also the kernel
 <p><a href="https://phoenixnap.com/kb/what-is-hypervisor-type-1-2"><i><b>What is a Hypervisior?Types of Hypervisors 1 & 2?</b></i></a></p>
 <p><a href="https://www.openlogic.com/blog/what-centos"><i><b>What is a CentOS?</b></i></a></p>
 <p><a href="https://www.openlogic.com/blog/centos-vs-debian"><i><b>CentOS vs Debian</b></i></a></p>
+<p><a href="https://www.tecmint.com/difference-between-apt-and-aptitude/"><i><b>What is APT and Aptitude?</b></i></a></p>
+<p><a href="https://wiki.centos.org/HowTos/SELinux"><i><b>SELinux</b></i></a></p>
+<p><a href="https://www.tecmint.com/mandatory-access-control-with-selinux-or-apparmor-linux/"><i><b>Impementing Mandatory Access Control with SELinux or AppArmor in Linux</b></i></a></p>
+<p><a href="https://www.redhat.com/sysadmin/apparmor-selinux-isolation"><i><b>A comparision of AppArmor and SELinux</b></i></a></p>
+<p><a href="https://elinux.org/images/3/39/SecureOS_nakamura.pdf"><i><b>SELinux vs AppArmor</b></i></a></p>
 
