@@ -24,6 +24,7 @@
 	<a href="#SSH">4. SSH</br></a>
 </b></h3>
 	<span> • </span><a href="#SS">4.1 Overview</br></a>
+	<span> • </span><a href="#SS2">4.2 Installing & Configuring SSH</br></a>
 
 <h3><b>
 	<a href="#ref">References</br></a>
@@ -106,6 +107,24 @@ Overview
 - SSH, also known as Secure Shell or Secure Socket Shell, is a network protocol that gives users, particularly system administrators, a secure way to access a computer over an unsecured network.
 </p>
 
+<h2 align=center id="SSH">
+SELinux
+</h2>
+<h2 id="SS">
+Overview
+</h2>
+
+![VM](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/dbaas/obe_dbaas_connecting_to_an_instance/images/key%20based%20authentication.jpg)
+
+<p>
+
+- SSH, also known as Secure Shell or Secure Socket Shell, is a network protocol that gives users, particularly system administrators, a secure way to access a computer over an unsecured network.
+</p>
+
+<h2 id="SS2">
+Installing & Configuring SSH
+</h2>
+
 
 <h2 id="ref">
 	<b>References</b>
@@ -120,4 +139,6 @@ Overview
 <p><a href="https://www.tecmint.com/mandatory-access-control-with-selinux-or-apparmor-linux/"><i><b>Impementing Mandatory Access Control with SELinux or AppArmor in Linux</b></i></a></p>
 <p><a href="https://www.redhat.com/sysadmin/apparmor-selinux-isolation"><i><b>A comparision of AppArmor and SELinux</b></i></a></p>
 <p><a href="https://elinux.org/images/3/39/SecureOS_nakamura.pdf"><i><b>SELinux vs AppArmor</b></i></a></p>
+<p><a href="https://searchsecurity.techtarget.com/definition/Secure-Shell"><i><b>Secure Socket Shell (SSH)</b></i></a></p>
+<p><a href="https://linuxhint.com/enable_ssh_centos8/"><i><b>How to Enable SSH on CentOS 8</b></i></a></p>
 
