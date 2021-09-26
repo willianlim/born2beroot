@@ -10,12 +10,15 @@
 	<span> • </span><a href="#What is Server Virtualization?">1.1 What is Server Virtualization?</br></a>
 
 <h3><b>
-	<a href="#References">References</br></a>
+	<a href="#ref">References</br></a>
 </b></h3>
 
 
-<h2 id="Virtualization Server">
+<h2 align=center id="Virtualization Server">
 Virtualization Server
+</h2>
+<h2 id="What is Server Virtualization?">
+What is Server Virtualization?
 </h2>
 
 Server virtualization is the process of creating multiple server instances from one physical server. Each server instance represents an isolated virtual environment. Within each virtual environment, you can run a separate operating system.
