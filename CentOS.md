@@ -125,6 +125,29 @@ Overview
 Installing & Configuring SSH
 </h2>
 
+```console
+foo@bar:~$ sudo yum install openssh-clients
+```
+```console
+foo@bar:~$ sudo yum install openssh-server
+```
+```console
+foo@bar:~$ sudo systemctl status sshd
+```
+
+```console
+foo@bar:~$ sudo systemctl enable sshd
+```
+
+```console
+foo@bar:~$ sudo vi /etc/ssh/sshd_config
+```
+
+```console
+foo@bar:~$ 
+```
+
+
 
 <h2 id="ref">
 	<b>References</b>
@@ -141,4 +164,5 @@ Installing & Configuring SSH
 <p><a href="https://elinux.org/images/3/39/SecureOS_nakamura.pdf"><i><b>SELinux vs AppArmor</b></i></a></p>
 <p><a href="https://searchsecurity.techtarget.com/definition/Secure-Shell"><i><b>Secure Socket Shell (SSH)</b></i></a></p>
 <p><a href="https://linuxhint.com/enable_ssh_centos8/"><i><b>How to Enable SSH on CentOS 8</b></i></a></p>
+<p><a href="https://ostechnix.com/linux-troubleshooting-semanage-command-not-found-in-centos-7rhel-7/"><i><b>semanage command nott found</b></i></a></p>
 
