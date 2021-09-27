@@ -143,10 +143,68 @@ foo@bar:~$ sudo vi /etc/ssh/sshd_config
 ```
 
 ```console
+foo@bar:~$ Port 4242
+```
+
+```console
+foo@bar:~$ PermitRootLogin no
+```
+
+```console
+foo@bar:~$ dnf provides /usr/sbin/semanage
+```
+
+```console
+foo@bar:~$ dnf install policycoreutils-python-utils
+```
+
+```console
+foo@bar:~$ sudo semanage port -a -t ssh_port_t -p tcp 4242
+```
+
+```console
+foo@bar:~$ semanage -h
+```
+
+```console
+foo@bar:~$ systemctl restart ssh
+```
+
+```console
+foo@bar:~$ sudo dnf install epel-release -y
+```
+
+```console
+foo@bar:~$ sudo dnf install ufw -y
+```
+
+```console
+foo@bar:~$ sudo ufw enable
+```
+
+```console
+foo@bar:~$ sudo ufw status
+```
+
+```console
+foo@bar:~$ sudo ufw default allow outgoing
+```
+
+```console
+foo@bar:~$ sudo ufw default deny incoming
+```
+
+```console
+foo@bar:~$ sudo ufw allow 4242
+```
+
+```console
 foo@bar:~$
 ```
 
-
+```console
+foo@bar:~$
+```
 
 <h2 id="ref">
 	<b>References</b>
@@ -164,4 +222,5 @@ foo@bar:~$
 <p><a href="https://searchsecurity.techtarget.com/definition/Secure-Shell"><i><b>Secure Socket Shell (SSH)</b></i></a></p>
 <p><a href="https://linuxhint.com/enable_ssh_centos8/"><i><b>How to Enable SSH on CentOS 8</b></i></a></p>
 <p><a href="https://ostechnix.com/linux-troubleshooting-semanage-command-not-found-in-centos-7rhel-7/"><i><b>semanage command nott found</b></i></a></p>
+<p><a href="https://shouts.dev/install-and-setup-ufw-firewall-on-centos-8-rhel-8"><i><b>Install and Setup UFW Firewall</b></i></a></p>
 
