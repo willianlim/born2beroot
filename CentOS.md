@@ -124,6 +124,30 @@ Overview
 Installing & Configuring SSH
 </h2>
 
+```console
+foo@bar:~$ sudo yum install openssh-clients
+```
+```console
+foo@bar:~$ sudo yum install openssh-server
+```
+```console
+foo@bar:~$ sudo systemctl status sshd
+```
+
+```console
+foo@bar:~$ sudo systemctl enable sshd
+```
+
+```console
+foo@bar:~$ sudo vi /etc/ssh/sshd_config
+```
+
+```console
+foo@bar:~$
+```
+
+
+
 <h2 id="ref">
 	<b>References</b>
 </h2>
