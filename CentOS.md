@@ -146,6 +146,10 @@ foo@bar:~$ sudo vi /etc/ssh/sshd_config
 foo@bar:~$
 ```
 
+```console
+foo@bar:~$
+```
+
 
 
 <h2 id="ref">
