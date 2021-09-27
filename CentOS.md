@@ -104,11 +104,10 @@ Overview
 <p>
 
 - Security-Enhanced Linux (SELinux) is a mandatory access control (MAC) security mechanism implemented in the kernel. SELinux was first introduced in CentOS 4 and significantly enhanced in later CentOS releases. These enhancements mean that content varies as to how to approach SELinux over time to solve problems.
-- SSH, also known as Secure Shell or Secure Socket Shell, is a network protocol that gives users, particularly system administrators, a secure way to access a computer over an unsecured network.
 </p>
 
 <h2 align=center id="SSH">
-SELinux
+SSH
 </h2>
 <h2 id="SS">
 Overview
@@ -125,7 +124,6 @@ Overview
 Installing & Configuring SSH
 </h2>
 
-
 <h2 id="ref">
 	<b>References</b>
 </h2>
@@ -141,4 +139,5 @@ Installing & Configuring SSH
 <p><a href="https://elinux.org/images/3/39/SecureOS_nakamura.pdf"><i><b>SELinux vs AppArmor</b></i></a></p>
 <p><a href="https://searchsecurity.techtarget.com/definition/Secure-Shell"><i><b>Secure Socket Shell (SSH)</b></i></a></p>
 <p><a href="https://linuxhint.com/enable_ssh_centos8/"><i><b>How to Enable SSH on CentOS 8</b></i></a></p>
+<p><a href="https://ostechnix.com/linux-troubleshooting-semanage-command-not-found-in-centos-7rhel-7/"><i><b>semanage command nott found</b></i></a></p>
 
