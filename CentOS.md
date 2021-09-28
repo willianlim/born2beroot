@@ -204,6 +204,14 @@ foo@bar:~$ sudo ufw status
 ```
 
 ```console
+foo@bar:~$ sudo ufw status numbered
+```
+
+```console
+foo@bar:~$ sudo ufw delete 1
+```
+
+```console
 foo@bar:~$ sudo ufw default allow outgoing
 ```
 
@@ -215,9 +223,6 @@ foo@bar:~$ sudo ufw default deny incoming
 foo@bar:~$ sudo ufw allow 4242
 ```
 
-```console
-foo@bar:~$
-```
 
 ```console
 foo@bar:~$
