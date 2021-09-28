@@ -237,6 +237,10 @@ Install and Setup UFW Firewall
 Hostname, Users and Groups
 </h2>
 
+<h2 id="Hostname">
+Hostname
+</h2>
+
 ```console
 [root@wrosendo42 ~]# sudo vi /etc/hostname
 ```
@@ -249,6 +253,58 @@ Hostname, Users and Groups
 
 ```console
 [root@wrosendo42 ~]# sudo reboot
+```
+
+<h2 id="Users">
+Users
+</h2>
+
+```console
+[root@wrosendo42 ~]# users
+```
+
+```console
+[root@wrosendo42 ~]# useradd [options] <username>
+```
+
+```console
+[root@wrosendo42 ~]# usermod [options] <username>
+```
+
+```console
+[root@wrosendo42 ~]# userdel [options] <username>
+```
+
+```console
+[root@wrosendo42 ~]# id -u <username> (UID - user ID)
+```
+
+```console
+[root@wrosendo42 ~]#
+```
+
+<h2 id="Group">
+Group
+</h2>
+
+```console
+[root@wrosendo42 ~]# groups <username>
+```
+
+```console
+[root@wrosendo42 ~]# groupadd [options] <group_name>
+```
+
+```console
+[root@wrosendo42 ~]# groupdel [options] <group_name>
+```
+
+```console
+[root@wrosendo42 ~]# gpasswd <username> [options] <group_name>
+```
+
+```console
+[root@wrosendo42 ~]#
 ```
 
 <h2 align=center id="Setting 'sudo' in linux">
@@ -381,5 +437,8 @@ retry = 3
 <p><a href="https://www.server-world.info/en/note?os=CentOS_8&p=pam&f=1"><i><b>Pwquality : Set Password Rules</b></i></a></p>
 <p><a href="https://www.tecmint.com/sudoers-configurations-for-setting-sudo-in-linux/"><i><b>Setting ‘sudo’ in Linux</b></i></a></p>
 <p><a href="https://www.cyberciti.biz/faq/centos-8-change-hostname-computer-name-command/"><i><b>Change Hostname</b></i></a></p>
+<p><a href="https://www.cyberciti.biz/faq/create-a-new-user-account-in-centos-7-8-linux/"><i><b>How to create new user</b></i></a></p>
+<p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/s2-users-cl-tools"><i><b>Managing Users via command-line</b></i></a></p>
 <p><a href="https://www.techrepublic.com/article/how-to-create-users-and-groups-in-linux-from-the-command-line/"><i><b>How to create users and groups</b></i></a></p>
+<p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/s2-groups-cl-tools"><i><b>Managing Groups via command-line</b></i></a></p>
 
