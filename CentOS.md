@@ -415,7 +415,37 @@ usercheck = 1
 retry = 3
 ```
 
+```console
+[root@wrosendo42 ~]#
+```
 
+<h2 align=center id="WALL">
+WALL
+</h2>
+
+```console
+[root@wrosendo42 ~]# wall [options] [message-text/filename]
+```
+
+<h2 align=center id="cron">
+cron
+</h2>
+
+```console
+[root@wrosendo42 ~]# sudo dnf install crontabs
+```
+
+```console
+[root@wrosendo42 ~]# sudo systemctl start crond.service
+```
+
+```console
+[root@wrosendo42 ~]# sudo systemctl enable crond.service
+```
+
+```console
+[root@wrosendo42 ~]#
+```
 
 ```console
 [root@wrosendo42 ~]#
@@ -439,6 +469,8 @@ retry = 3
 <p><a href="https://ostechnix.com/linux-troubleshooting-semanage-command-not-found-in-centos-7rhel-7/"><i><b>semanage command nott found</b></i></a></p>
 <p><a href="https://shouts.dev/install-and-setup-ufw-firewall-on-centos-8-rhel-8"><i><b>Install and Setup UFW Firewall</b></i></a></p>
 <p><a href="https://linuxconfig.org/rhel-8-configure-static-ip-address"><i><b>How to configure a static IP address</b></i></a></p>
+<p><a href="https://www.snel.com/support/static-ip-configuration-centos-7/"><i><b>ip addres static</b></i></a></p>
+<p><a href="https://www.techrepublic.com/article/how-to-configure-a-static-ip-address-in-centos-7/"><i><b>static IPv4 configuration</b></i></a></p>
 <p><a href="https://www.server-world.info/en/note?os=CentOS_8&p=pam&f=1"><i><b>Pwquality : Set Password Rules</b></i></a></p>
 <p><a href="https://www.tecmint.com/sudoers-configurations-for-setting-sudo-in-linux/"><i><b>Setting ‘sudo’ in Linux</b></i></a></p>
 <p><a href="https://www.cyberciti.biz/faq/centos-8-change-hostname-computer-name-command/"><i><b>Change Hostname</b></i></a></p>
@@ -448,3 +480,5 @@ retry = 3
 <p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/s2-groups-cl-tools"><i><b>Managing Groups via command-line</b></i></a></p>
 <p><a href="https://linuxize.com/post/how-to-add-user-to-sudoers-in-centos/"><i><b>How to Add User to Sudoers in CentOS</b></i></a></p>
 <p><a href="https://github.com/caroldaniel/42sp-cursus-born2beroot/blob/master/guides/CentOS-en.md"><i><b>How to list all users in group</b></i></a></p>
+<p><a href="https://phoenixnap.com/kb/linux-wall"><i><b>How to use the wall</b></i></a></p>
+<p><a href="https://www.digitalocean.com/community/tutorials/how-to-use-cron-to-automate-tasks-centos-8-pt"><i><b>How to use the cron</b></i></a></p>
