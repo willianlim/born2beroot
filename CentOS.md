@@ -25,6 +25,12 @@
 </b></h3>
 	<span> • </span><a href="#SS">4.1 Overview</br></a>
 	<span> • </span><a href="#SS2">4.2 Installing & Configuring SSH</br></a>
+<h3><b>
+	<a href="#UFW">5. UFW</br></a>
+</b></h3>
+	<span> • </span><a href="#UF1">5.1 Overview</br></a>
+	<span> • </span><a href="#UF2">5.2 Install and Setup UFW Firewall</br></a>
+
 
 <h3><b>
 	<a href="#ref">References</br></a>
@@ -170,6 +176,17 @@ foo@bar:~$ semanage -h
 foo@bar:~$ systemctl restart ssh
 ```
 
+<h2 align=center id="UFW">
+UFW
+</h2>
+<h2 id="UF1">
+Overview
+</h2>
+
+<h2 id="UF2">
+Install and Setup UFW Firewall
+</h2>
+
 ```console
 foo@bar:~$ sudo dnf install epel-release -y
 ```
@@ -223,4 +240,6 @@ foo@bar:~$
 <p><a href="https://linuxhint.com/enable_ssh_centos8/"><i><b>How to Enable SSH on CentOS 8</b></i></a></p>
 <p><a href="https://ostechnix.com/linux-troubleshooting-semanage-command-not-found-in-centos-7rhel-7/"><i><b>semanage command nott found</b></i></a></p>
 <p><a href="https://shouts.dev/install-and-setup-ufw-firewall-on-centos-8-rhel-8"><i><b>Install and Setup UFW Firewall</b></i></a></p>
+<p><a href="https://linuxconfig.org/rhel-8-configure-static-ip-address"><i><b>How to configure a static IP address</b></i></a></p>
+<p><a href="https://www.server-world.info/en/note?os=CentOS_8&p=pam&f=1"><i><b>Pwquality : Set Password Rules</b></i></a></p>
 
