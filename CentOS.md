@@ -30,7 +30,13 @@
 </b></h3>
 	<span> • </span><a href="#UF1">5.1 Overview</br></a>
 	<span> • </span><a href="#UF2">5.2 Install and Setup UFW Firewall</br></a>
+<h3><b>
+	<a href="#Hostname, Users and Groups">6. Hostname, Users and Groups</br></a>
+</b></h3>
 
+<h3><b>
+	<a href="#Setting 'sudo' in linux">7. Setting 'sudo' in linux</br></a>
+</b></h3>
 
 <h3><b>
 	<a href="#ref">References</br></a>
@@ -223,6 +229,77 @@ foo@bar:~$ sudo ufw default deny incoming
 foo@bar:~$ sudo ufw allow 4242
 ```
 
+```console
+foo@bar:~$
+```
+
+<h2 align=center id="Hostname, Users and Groups">
+Hostname, Users and Groups
+</h2>
+
+```console
+foo@bar:~$ sudo vi /etc/hostname
+```
+
+```console
+foo@bar:~$ sudo vi /etc/hosts
+127.0.0.1	localhost localhost.localdomain localhost4 localhost4.locadomain4
+::1			localhost localhost.localdomain localhost6 localhost6.locadomain6
+```
+
+```console
+foo@bar:~$ sudo reboot
+```
+
+<h2 align=center id="Setting 'sudo' in linux">
+Setting 'sudo' in linux
+</h2>
+
+```console
+foo@bar:~$ dnf install sudo
+```
+
+```console
+foo@bar:~$ mkdir /var/log/sudo/sudo.log
+```
+
+```console
+foo@bar:~$ visudo -f /etc/sudoers.d/sudoers-rules
+# Set a Secure PATH
+Defaults	secure_path=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+
+# Enable sudo on TTY User Login Session
+Defaults	requiretty
+
+# Create a Sudo Log File
+Defatults	logfile=/var/log/sudo/sudo.log
+
+# Show Custom Message When You Enter Wrong sudo Password
+Defaults	badpass_message="Password is wrond, please try again"
+
+# Increase sudo Password Tries Limit
+Defaults	passwd_tries=5
+```
+
+For test:
+
+```console
+foo@bar:~$ sudo systemctl status sshd
+```
+
+```console
+foo@bar:~$ vi /var/log/sudo/sudo.log
+sep 28 11:55:05 : root : TTY=tty1 ; PWD=/root ; USER=root;
+	COMMAND=/usr/bin/systemctl status sshd
+```
+
+```console
+foo@bar:~$
+```
+
+<h2 align=center id="Password Policy">
+Password Policy
+</h2>
 
 ```console
 foo@bar:~$
@@ -249,4 +326,5 @@ foo@bar:~$
 <p><a href="https://www.server-world.info/en/note?os=CentOS_8&p=pam&f=1"><i><b>Pwquality : Set Password Rules</b></i></a></p>
 <p><a href="https://www.tecmint.com/sudoers-configurations-for-setting-sudo-in-linux/"><i><b>Setting ‘sudo’ in Linux</b></i></a></p>
 <p><a href="https://www.cyberciti.biz/faq/centos-8-change-hostname-computer-name-command/"><i><b>Change Hostname</b></i></a></p>
+<p><a href="https://www.techrepublic.com/article/how-to-create-users-and-groups-in-linux-from-the-command-line/"><i><b>How to create users and groups</b></i></a></p>
 
