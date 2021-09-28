@@ -300,12 +300,17 @@ Group
 ```
 
 ```console
-[root@wrosendo42 ~]# gpasswd <username> [options] <group_name>
+[root@wrosendo42 ~]# gpasswd [options] <username> <group_name>
 ```
 
 ```console
-[root@wrosendo42 ~]#
+[root@wrosendo42 ~]# getent group <groupname>
 ```
+
+```console
+[root@wrosendo42 ~]# id [options]
+```
+
 
 <h2 align=center id="Setting 'sudo' in linux">
 Setting 'sudo' in linux
@@ -441,4 +446,5 @@ retry = 3
 <p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/s2-users-cl-tools"><i><b>Managing Users via command-line</b></i></a></p>
 <p><a href="https://www.techrepublic.com/article/how-to-create-users-and-groups-in-linux-from-the-command-line/"><i><b>How to create users and groups</b></i></a></p>
 <p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/s2-groups-cl-tools"><i><b>Managing Groups via command-line</b></i></a></p>
-
+<p><a href="https://linuxize.com/post/how-to-add-user-to-sudoers-in-centos/"><i><b>How to Add User to Sudoers in CentOS</b></i></a></p>
+<p><a href="https://github.com/caroldaniel/42sp-cursus-born2beroot/blob/master/guides/CentOS-en.md"><i><b>How to list all users in group</b></i></a></p>
