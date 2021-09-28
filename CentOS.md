@@ -137,49 +137,49 @@ Installing & Configuring SSH
 </h2>
 
 ```console
-foo@bar:~$ sudo yum install openssh-clients
+[root@wrosendo42 ~]# sudo yum install openssh-clients
 ```
 ```console
-foo@bar:~$ sudo yum install openssh-server
+[root@wrosendo42 ~]# sudo yum install openssh-server
 ```
 ```console
-foo@bar:~$ sudo systemctl status sshd
-```
-
-```console
-foo@bar:~$ sudo systemctl enable sshd
+[root@wrosendo42 ~]# sudo systemctl status sshd
 ```
 
 ```console
-foo@bar:~$ sudo vi /etc/ssh/sshd_config
+[root@wrosendo42 ~]# sudo systemctl enable sshd
 ```
 
 ```console
-foo@bar:~$ Port 4242
+[root@wrosendo42 ~]# sudo vi /etc/ssh/sshd_config
 ```
 
 ```console
-foo@bar:~$ PermitRootLogin no
+[root@wrosendo42 ~]# Port 4242
 ```
 
 ```console
-foo@bar:~$ dnf provides /usr/sbin/semanage
+[root@wrosendo42 ~]# PermitRootLogin no
 ```
 
 ```console
-foo@bar:~$ dnf install policycoreutils-python-utils
+[root@wrosendo42 ~]# dnf provides /usr/sbin/semanage
 ```
 
 ```console
-foo@bar:~$ sudo semanage port -a -t ssh_port_t -p tcp 4242
+[root@wrosendo42 ~]# dnf install policycoreutils-python-utils
 ```
 
 ```console
-foo@bar:~$ semanage -h
+[root@wrosendo42 ~]# sudo semanage port -a -t ssh_port_t -p tcp 4242
 ```
 
 ```console
-foo@bar:~$ systemctl restart ssh
+[root@wrosendo42 ~]# semanage -h
+```
+
+```console
+[root@wrosendo42 ~]# systemctl restart ssh
 ```
 
 <h2 align=center id="UFW">
@@ -194,43 +194,43 @@ Install and Setup UFW Firewall
 </h2>
 
 ```console
-foo@bar:~$ sudo dnf install epel-release -y
+[root@wrosendo42 ~]# sudo dnf install epel-release -y
 ```
 
 ```console
-foo@bar:~$ sudo dnf install ufw -y
+[root@wrosendo42 ~]# sudo dnf install ufw -y
 ```
 
 ```console
-foo@bar:~$ sudo ufw enable
+[root@wrosendo42 ~]# sudo ufw enable
 ```
 
 ```console
-foo@bar:~$ sudo ufw status
+[root@wrosendo42 ~]# sudo ufw status
 ```
 
 ```console
-foo@bar:~$ sudo ufw status numbered
+[root@wrosendo42 ~]# sudo ufw status numbered
 ```
 
 ```console
-foo@bar:~$ sudo ufw delete 1
+[root@wrosendo42 ~]# sudo ufw delete 1
 ```
 
 ```console
-foo@bar:~$ sudo ufw default allow outgoing
+[root@wrosendo42 ~]# sudo ufw default allow outgoing
 ```
 
 ```console
-foo@bar:~$ sudo ufw default deny incoming
+[root@wrosendo42 ~]# sudo ufw default deny incoming
 ```
 
 ```console
-foo@bar:~$ sudo ufw allow 4242
+[root@wrosendo42 ~]# sudo ufw allow 4242
 ```
 
 ```console
-foo@bar:~$
+[root@wrosendo42 ~]#
 ```
 
 <h2 align=center id="Hostname, Users and Groups">
@@ -238,17 +238,17 @@ Hostname, Users and Groups
 </h2>
 
 ```console
-foo@bar:~$ sudo vi /etc/hostname
+[root@wrosendo42 ~]# sudo vi /etc/hostname
 ```
 
 ```console
-foo@bar:~$ sudo vi /etc/hosts
+[root@wrosendo42 ~]# sudo vi /etc/hosts
 127.0.0.1	localhost localhost.localdomain localhost4 localhost4.locadomain4
 ::1			localhost localhost.localdomain localhost6 localhost6.locadomain6
 ```
 
 ```console
-foo@bar:~$ sudo reboot
+[root@wrosendo42 ~]# sudo reboot
 ```
 
 <h2 align=center id="Setting 'sudo' in linux">
@@ -256,15 +256,15 @@ Setting 'sudo' in linux
 </h2>
 
 ```console
-foo@bar:~$ dnf install sudo
+[root@wrosendo42 ~]# dnf install sudo
 ```
 
 ```console
-foo@bar:~$ mkdir /var/log/sudo/sudo.log
+[root@wrosendo42 ~]# mkdir /var/log/sudo/sudo.log
 ```
 
 ```console
-foo@bar:~$ visudo -f /etc/sudoers.d/sudoers-rules
+[root@wrosendo42 ~]# visudo -f /etc/sudoers.d/sudoers-rules
 # Set a Secure PATH
 Defaults	secure_path=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
 
@@ -284,25 +284,80 @@ Defaults	passwd_tries=5
 For test:
 
 ```console
-foo@bar:~$ sudo systemctl status sshd
+[root@wrosendo42 ~]# sudo systemctl status sshd
 ```
 
 ```console
-foo@bar:~$ vi /var/log/sudo/sudo.log
+[root@wrosendo42 ~]# vi /var/log/sudo/sudo.log
 sep 28 11:55:05 : root : TTY=tty1 ; PWD=/root ; USER=root;
 	COMMAND=/usr/bin/systemctl status sshd
 ```
 
 ```console
-foo@bar:~$
+[root@wrosendo42 ~]#
 ```
 
 <h2 align=center id="Password Policy">
 Password Policy
 </h2>
 
+> 1. Your password has to expire every 30 days.
+> 2. The minimum number of days allowed before the modification of a password will be set to 2.
+> 3. The user has to receive a warning message 7 days before their password expires.
+> 4. Your password must be at least 10 characters long.
+> 5. It must contain an uppercase letter and a number. Also, it must not contain more than 3 consecutive identical characters.
+> 6. The password must not include the name of the user.
+> 7. The following rule does not apply to the root password: The password must have at least 7 characters that are not part of the former password
+
 ```console
-foo@bar:~$
+[root@wrosendo42 ~]# vi /etc/login.defs
+
+:set number
+
+# line 39: Maximum number of days a password may be used.
+PASS_MAX_DAYS 30
+
+# line 40: Minimum number of days allowed between password changes.
+PASS_MIN_DAYS 2
+
+# line 41: Minimum acceptable password length.
+PASS_MIN_LEN
+
+# line 42: Number of days warning given before a password expires.
+PASS_WARN_AGE 7
+```
+
+```console
+[root@wrosendo42 ~]# vi /etc/security/pwquality.conf
+
+:set number
+
+# line 6: Set number of characters in the new password that must not be present in the old password.
+difok = 7
+
+# line 11: Set minimum password length
+minlen = 10
+
+# line 15: Require at least one digit in the new password.
+dcredit = -1
+
+# line 20: Require at least one uppercase character in the new password.
+ucredit = -1
+
+# line 38: Set maximum number of allowed consecutive same characters in the new password.
+maxrepeat = 3
+
+# line 55: If it contains the user name in some form.
+usercheck = 1
+
+#line 70: Pronpt user at most N times before returning with error.
+retry = 3
+```
+
+
+
+```console
+[root@wrosendo42 ~]#
 ```
 
 <h2 id="ref">
