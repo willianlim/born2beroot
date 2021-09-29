@@ -197,7 +197,7 @@ Installing & Configuring SSH
 ```
 
 ```console
-[root@wrosendo42 ~]# systemctl restart ssh
+[root@wrosendo42 ~]# systemctl restart sshd
 ```
 
 <h2 id="SS3">
@@ -217,7 +217,7 @@ Testing the SSH key
 ```
 
 ```console
-[root@wrosendo42 ~]# ssh -tunlp
+[root@wrosendo42 ~]# ss -tunlp
 ```
 
 ```console
@@ -244,7 +244,11 @@ Install and Setup UFW Firewall
 ```
 
 ```console
-[root@wrosendo42 ~]# sudo ufw enable
+[root@wrosendo42 ~]# sudo systemctl start ufw
+```
+
+```console
+[root@wrosendo42 ~]# sudo systemctl enable ufw
 ```
 
 ```console
@@ -269,6 +273,14 @@ Install and Setup UFW Firewall
 
 ```console
 [root@wrosendo42 ~]# sudo ufw allow 4242
+```
+
+```console
+[root@wrosendo42 ~]# sudo systemctl start ufw
+```
+
+```console
+[root@wrosendo42 ~]# sudo systemctl restart ufw
 ```
 
 ```console
@@ -535,3 +547,4 @@ cron
 <p><a href="https://docs.centos.org/en-US/centos/install-guide/CustomSpoke-x86/"><i><b>Manual Partitioning</b></i></a></p>
 <p><a href="https://www.server-world.info/en/note?os=CentOS_8&p=lvm&f=3"><i><b>LVM : Manage Logical Volumes</b></i></a></p>
 <p><a href="https://askubuntu.com/questions/264046/how-to-ssh-on-a-port-other-than-22"><i><b>How to SSH on a port</b></i></a></p>
+<p><a href="https://unix.stackexchange.com/questions/182959/how-can-i-enable-ufw-automatically-on-boot"><i><b>ufw enable automatic</b></i></a></p>
