@@ -118,6 +118,24 @@ Overview
 - Security-Enhanced Linux (SELinux) is a mandatory access control (MAC) security mechanism implemented in the kernel. SELinux was first introduced in CentOS 4 and significantly enhanced in later CentOS releases. These enhancements mean that content varies as to how to approach SELinux over time to solve problems.
 </p>
 
+<h2 align=center id="LVM">
+LVM
+</h2>
+<h2 id="lv">
+Overview
+</h2>
+
+![VM](https://cdn.thegeekdiary.com/wp-content/uploads/2014/10/LVM-basic-structure.png)
+
+<p>
+
+LVM stands for Logical Volume Management. It is a system of managing logical volumes, or filesystems, that is much more advanced and flexible than the traditional method of partitioning a disk into one or more segments and formatting that partition with a filesystem.
+
+- PV – It’s a raw hard drive that it initialized to work with LVM, such as /dev/sdb, /dev/sdc, /dev/sdb1 etc.
+- VG – Many PV is combined into one VG. You can create many VGs and each of them has a unique name.
+- LV – You can create many LVs from a VG. You can extend, reduce the LV size on the fly. The LV also has unique names. You format the LV into ext4, zfs, btrfs etc filesystems, mount it and use it as you do other ordinary partitions.
+</p>
+
 <h2 align=center id="SSH">
 SSH
 </h2>
@@ -180,6 +198,30 @@ Installing & Configuring SSH
 
 ```console
 [root@wrosendo42 ~]# systemctl restart ssh
+```
+
+<h2 id="SS3">
+Testing the SSH key
+</h2>
+
+```console
+[root@wrosendo42 ~]# semanage port -l | grep ssh
+```
+
+```console
+[root@wrosendo42 ~]# semanage port -a -t ssh_port_t tcp 4242
+```
+
+```console
+[root@wrosendo42 ~]# systemctl restart sshd
+```
+
+```console
+[root@wrosendo42 ~]# ssh -tunlp
+```
+
+```console
+[root@wrosendo42 ~]#
 ```
 
 <h2 align=center id="UFW">
@@ -415,8 +457,14 @@ usercheck = 1
 retry = 3
 ```
 
+atulização
 ```console
-[root@wrosendo42 ~]#
+[root@wrosendo42 ~]# vi /etc/pam.d/system-auth
+
+:set number
+
+# line 10:
+password	requisite	pam_pwquality.so try_first_pass local_users_only retry=3 authtok_type= minlen=10 ucredit=-1 dcredit=-1 maxrepeat=3 difok=7 reject_username enforce_for_root
 ```
 
 <h2 align=center id="WALL">
@@ -482,3 +530,8 @@ cron
 <p><a href="https://github.com/caroldaniel/42sp-cursus-born2beroot/blob/master/guides/CentOS-en.md"><i><b>How to list all users in group</b></i></a></p>
 <p><a href="https://phoenixnap.com/kb/linux-wall"><i><b>How to use the wall</b></i></a></p>
 <p><a href="https://www.digitalocean.com/community/tutorials/how-to-use-cron-to-automate-tasks-centos-8-pt"><i><b>How to use the cron</b></i></a></p>
+<p><a href="https://www.thegeekdiary.com/redhat-centos-a-beginners-guide-to-lvm-logical-volume-manager/"><i><b>Beginner's Guide to LVM</b></i></a></p>
+<p><a href="https://linuxhint.com/install_lvm_centos/"><i><b>How to install and Configure LVM on CentOS</b></i></a></p>
+<p><a href="https://docs.centos.org/en-US/centos/install-guide/CustomSpoke-x86/"><i><b>Manual Partitioning</b></i></a></p>
+<p><a href="https://www.server-world.info/en/note?os=CentOS_8&p=lvm&f=3"><i><b>LVM : Manage Logical Volumes</b></i></a></p>
+<p><a href="https://askubuntu.com/questions/264046/how-to-ssh-on-a-port-other-than-22"><i><b>How to SSH on a port</b></i></a></p>
