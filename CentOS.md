@@ -390,7 +390,7 @@ Defaults	requiretty
 Defatults	logfile=/var/log/sudo/sudo.log
 
 # Show Custom Message When You Enter Wrong sudo Password
-Defaults	badpass_message="Password is wrond, please try again"
+Defaults	badpass_message="Password is wrong, please try again"
 
 # Increase sudo Password Tries Limit
 Defaults	passwd_tries=5
@@ -511,6 +511,275 @@ cron
 [root@wrosendo42 ~]#
 ```
 
+<h2 align=center id="IP Static">
+IP Static
+</h2>
+
+```console
+[root@wrosendo42 ~]# vi /etc/sysconfig/network-scripts/ifcfg-enp0s3
+
+TYPE=Ethernet
+PROXY_METHOD=none
+BROWSER_ONLY=no
+BOOTPROTO=none
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=no
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_FAILURE_FATAL=no
+NAME=enp0s3
+UUID=620ec731-3c6c-42df-8a0f-c6f81f1d2325
+DEVICE=enp0s3
+ONBOOT=yes
+IPADDR=192.168.0.110
+GATEWAY=192.168.0.1
+DNS1=8.8.8.8
+```
+
+```console
+[root@wrosendo42 ~]# sudo systemctl restart NetworkManager
+```
+
+```console
+[root@wrosendo42 ~]#
+```
+
+```console
+[root@wrosendo42 ~]#
+```
+
+```console
+[root@wrosendo42 ~]#
+```
+
+<h2 align=center id="Bonus">
+Bonus
+</h2>
+
+<h2 id="Lighttpd">
+Lighttpd
+</h2>
+
+```console
+[root@wrosendo42 ~]# dnf -y install epel-release
+```
+
+```console
+[root@wrosendo42 ~]# dnf -y install lighttpd
+```
+
+```console
+[root@wrosendo42 ~]# systemctl start lighttpd
+```
+
+```console
+[root@wrosendo42 ~]# systemctl enable lighttpd
+```
+
+```console
+[root@wrosendo42 ~]# systemctl status lighttpd
+```
+
+```console
+[root@wrosendo42 ~]# systemctl restart lighttpd
+```
+
+```console
+[root@wrosendo42 ~]# systemctl restart NetworkManager
+```
+
+```console
+[root@wrosendo42 ~]#
+```
+
+<h2 id="MariaDB">
+MariaDB
+</h2>
+
+```console
+[root@wrosendo42 ~]# dnf -y install mariadb mariadb-server
+```
+
+```console
+[root@wrosendo42 ~]# systemctl start mariadb.service
+```
+
+```console
+[root@wrosendo42 ~]# systemctl enable mariadb.service
+```
+
+```console
+[root@wrosendo42 ~]# systemctl status mariadb.service
+```
+
+```console
+[root@wrosendo42 ~]# mysql_secure_installation
+
+Enter current password for root (enter for none): Enter
+OK, successfully used password, moving on... Setting the root password ensures that nobody can log into the MariaDB root user without the proper authorization.
+
+Set root password? [Y/n] y
+New password:
+Re-enter new password:
+Password updated successfully! Reloading privilege tables.. ... Success! By default, a MariaDB installation has an anonymous user, allowing anyone to log into MariaDB without having to have a user account created for them. This is intended only for testing, and to make the installation go a bit smoother. You should remove them before moving into a production environment.
+
+Remove anonymous users? [Y/n] y ...
+Success! Normally, root should only be allowed to connect from 'localhost'. This ensures that someone cannot guess at the root password from the network.
+
+Disallow root login remotely? [Y/n] y ... Success! By default, MariaDB comes with a database named 'test' that anyone can access. This is also intended only for testing and should be removed before moving into a production environment.
+
+Remove test database and access to it? [Y/n] y -
+Dropping test database... ... Success! - Removing privileges on test database... ... Success! Reloading the privilege tables will ensure that all changes made so far will take effect immediately.
+
+Reload privilege tables now? [Y/n] y ... Success! Cleaning up... All done! If you've completed all of the above steps, your MariaDB installation should now be secure. Thanks for using MariaDB!
+```
+
+```console
+[root@wrosendo42 ~]# systemctl restart mariadb
+```
+
+```console
+[root@wrosendo42 ~]# mysql -u root -p
+```
+
+```console
+[root@wrosendo42 ~]# CREATE DATABASE word;
+```
+
+```console
+[root@wrosendo42 ~]# CREATE USER 'will'@'wrosendo42' IDENTIFIED BY '1022021';
+```
+
+```console
+[root@wrosendo42 ~]# GRANT ALL PRIVILEGES ON word.* TO 'will'@'wroendo42' IDENTIFIED BY '1022021' WITH GRANT OPTION;
+```
+
+```console
+[root@wrosendo42 ~]# FLUSH PRIVILEGES;
+```
+
+```console
+[root@wrosendo42 ~]# EXIT;
+```
+
+```console
+[root@wrosendo42 ~]#
+```
+
+<h2 id="PHP">
+PHP
+</h2>
+
+```console
+[root@wrosendo42 ~]# sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+```
+
+```console
+[root@wrosendo42 ~]# sudo dnf install -y https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+```
+
+```console
+[root@wrosendo42 ~]# sudo dnf module list php
+```
+
+```console
+[root@wrosendo42 ~]# sudo dnf module enable php:remi-8.0 -y
+```
+
+To install additional PHP packages/extensions, use the command syntax:
+```console
+[root@wrosendo42 ~]# sudo yum install php-xxx
+```
+
+```console
+[root@wrosendo42 ~]# sudo dnf -y install php php-mysqlnd php-pdo php-gd php-mbstring
+```
+
+```console
+[root@wrosendo42 ~]# sudo dnf -y install php-fpm lighttpd-fastcgi
+```
+
+To view enabled modules, run:
+```console
+[root@wrosendo42 ~]# php --modules
+```
+
+```console
+[root@wrosendo42 ~]# vi /etc/php-fpm.d/www.conf
+
+:set number
+
+# line 24:
+user = lighttpd
+
+# line 26:
+group = lighttpd
+
+# line 38:
+listen = 127.0.0.1:9000
+```
+
+```console
+[root@wrosendo42 ~]# sudo systemctl start php-fpm.service
+```
+
+```console
+[root@wrosendo42 ~]# sudo systemctl enable php-fpm.service
+```
+
+```console
+[root@wrosendo42 ~]# vi /etc/php.ini
+
+:set number
+
+# line 807:
+cgi.fix_pathinfo=1
+```
+
+```console
+[root@wrosendo42 ~]# vi /etc/lighttpd/modules.conf
+
+:set number
+
+# line 144:
+include "conf.d/fastcgi.conf"
+```
+
+```console
+[root@wrosendo42 ~]# vi /etc/lighttpd/conf.d/fastcgi.conf
+
+fastcgi.server += ( ".php" =>
+		((
+				"host" => "127.0.0.1",
+				"port" => "9000",
+				"broken-scriptfilename" => "enable"
+		))
+)
+```
+
+```console
+[root@wrosendo42 ~]# systemctl restart lighttpd
+```
+
+```console
+[root@wrosendo42 ~]# vi /var/www/lighttpd/info.php
+
+<?php
+phpinfo();
+?>
+```
+
+```console
+[root@wrosendo42 ~]#
+```
+
+```console
+[root@wrosendo42 ~]#
+```
+
+
+
 <h2 id="ref">
 	<b>References</b>
 </h2>
@@ -531,6 +800,7 @@ cron
 <p><a href="https://linuxconfig.org/rhel-8-configure-static-ip-address"><i><b>How to configure a static IP address</b></i></a></p>
 <p><a href="https://www.snel.com/support/static-ip-configuration-centos-7/"><i><b>ip addres static</b></i></a></p>
 <p><a href="https://www.techrepublic.com/article/how-to-configure-a-static-ip-address-in-centos-7/"><i><b>static IPv4 configuration</b></i></a></p>
+<p><a href="https://www.linuxtechi.com/configure-static-ip-address-rhel8/"><i><b>How to Configure Static IP Address in RHEL 8</b></i></a></p>
 <p><a href="https://www.server-world.info/en/note?os=CentOS_8&p=pam&f=1"><i><b>Pwquality : Set Password Rules</b></i></a></p>
 <p><a href="https://www.tecmint.com/sudoers-configurations-for-setting-sudo-in-linux/"><i><b>Setting ‘sudo’ in Linux</b></i></a></p>
 <p><a href="https://www.cyberciti.biz/faq/centos-8-change-hostname-computer-name-command/"><i><b>Change Hostname</b></i></a></p>
@@ -538,6 +808,7 @@ cron
 <p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/s2-users-cl-tools"><i><b>Managing Users via command-line</b></i></a></p>
 <p><a href="https://www.techrepublic.com/article/how-to-create-users-and-groups-in-linux-from-the-command-line/"><i><b>How to create users and groups</b></i></a></p>
 <p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/s2-groups-cl-tools"><i><b>Managing Groups via command-line</b></i></a></p>
+<p><a href="https://unix.stackexchange.com/questions/29570/how-do-i-remove-a-user-from-a-group"><i><b>How do I remove a user from a group?</b></i></a></p>
 <p><a href="https://linuxize.com/post/how-to-add-user-to-sudoers-in-centos/"><i><b>How to Add User to Sudoers in CentOS</b></i></a></p>
 <p><a href="https://github.com/caroldaniel/42sp-cursus-born2beroot/blob/master/guides/CentOS-en.md"><i><b>How to list all users in group</b></i></a></p>
 <p><a href="https://phoenixnap.com/kb/linux-wall"><i><b>How to use the wall</b></i></a></p>
@@ -548,3 +819,9 @@ cron
 <p><a href="https://www.server-world.info/en/note?os=CentOS_8&p=lvm&f=3"><i><b>LVM : Manage Logical Volumes</b></i></a></p>
 <p><a href="https://askubuntu.com/questions/264046/how-to-ssh-on-a-port-other-than-22"><i><b>How to SSH on a port</b></i></a></p>
 <p><a href="https://unix.stackexchange.com/questions/182959/how-can-i-enable-ufw-automatically-on-boot"><i><b>ufw enable automatic</b></i></a></p>
+<p><a href="https://www.tecmint.com/install-lighttpd-with-php-fpm-mariadb-on-centos/"><i><b>How to Install Lighttpd with PHP and MariaDB on CentOS/RHEL 8/7</b></i></a></p>
+<p><a href="https://mariadb.com/kb/en/mariadb-basics/"><i><b>MariaDB Basics</b></i></a></p>
+<p><a href="https://mariadb.com/kb/en/create-user/"><i><b>CREATE USER MariaDB</b></i></a></p>
+<p><a href="https://mariadb.com/kb/en/grant/"><i><b>GRANT</b></i></a></p>
+<p><a href="https://www.tecmint.com/install-php-8-on-centos/"><i><b>How to Install PHP 8 on CentOS/RHEL 8/7</b></i></a></p>
+<p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/using_selinux/configuring-selinux-for-applications-and-services-with-non-standard-configurations_using-selinux"><i><b>CONFIGURING SELINUX FOR APPLICATIONS AND SERVICES</b></i></a></p>
