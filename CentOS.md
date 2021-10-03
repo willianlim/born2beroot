@@ -334,6 +334,10 @@ Users
 ```
 
 ```console
+[root@wrosendo42 ~]# passwd <username>
+```
+
+```console
 [root@wrosendo42 ~]#
 ```
 
@@ -578,6 +582,10 @@ Lighttpd
 ```
 
 ```console
+[root@wrosendo42 ~]# ufw allow http
+```
+
+```console
 [root@wrosendo42 ~]# systemctl status lighttpd
 ```
 
@@ -652,7 +660,7 @@ Reload privilege tables now? [Y/n] y ... Success! Cleaning up... All done! If yo
 ```
 
 ```console
-[root@wrosendo42 ~]# GRANT ALL PRIVILEGES ON word.* TO 'will'@'wroendo42' IDENTIFIED BY '1022021' WITH GRANT OPTION;
+[root@wrosendo42 ~]# GRANT ALL PRIVILEGES ON word.* TO 'will'@'wrosendo42' IDENTIFIED BY '1022021' WITH GRANT OPTION;
 ```
 
 ```console
@@ -721,14 +729,6 @@ listen = 127.0.0.1:9000
 ```
 
 ```console
-[root@wrosendo42 ~]# sudo systemctl start php-fpm.service
-```
-
-```console
-[root@wrosendo42 ~]# sudo systemctl enable php-fpm.service
-```
-
-```console
 [root@wrosendo42 ~]# vi /etc/php.ini
 
 :set number
@@ -742,8 +742,10 @@ cgi.fix_pathinfo=1
 
 :set number
 
-# line 144:
-include "conf.d/fastcgi.conf"
+    ##
+142 ## FastCGI (mod_fastcgi)
+143 ##
+144 include "conf.d/fastcgi.conf"
 ```
 
 ```console
@@ -759,7 +761,19 @@ fastcgi.server += ( ".php" =>
 ```
 
 ```console
-[root@wrosendo42 ~]# systemctl restart lighttpd
+[root@wrosendo42 ~]# sudo setsebool -P httpd_can_network_connect 1
+```
+
+```console
+[root@wrosendo42 ~]# sudo setsebool -P httpd_can_network_connect_db 1
+```
+
+```console
+[root@wrosendo42 ~]# sudo systemctl start php-fpm.service
+```
+
+```console
+[root@wrosendo42 ~]# sudo systemctl enable php-fpm.service
 ```
 
 ```console
@@ -778,7 +792,54 @@ phpinfo();
 [root@wrosendo42 ~]#
 ```
 
+<h2 id="Wordpress">
+Wordpress
+</h2>
 
+```console
+[root@wrosendo42 ~]# yum -y install wget tar
+```
+
+
+```console
+[root@wrosendo42 ~]# wget http://wordpress.org/latest.tar.gz
+```
+
+```console
+[root@wrosendo42 ~]# tar -xzvf latest.tar.gz
+```
+
+```console
+[root@wrosendo42 ~]# cp wordpress/wp-config-sample.php wordpress/wp-config.php
+```
+
+```console
+[root@wrosendo42 ~]# sudo cp -r ~/wordpress/* /var/www/html
+```
+
+```console
+[root@wrosendo42 ~]# sudo vim /var/www/html/wp-config.php
+```
+
+```console
+[root@wrosendo42 ~]# sudo chown -R lighttpd:lighttpd /var/www/html/wordpress
+```
+
+```console
+[root@wrosendo42 ~]# sudo chmod -R 755 /var/www/html/wordpress
+```
+
+```console
+[root@wrosendo42 ~]# sudo chcon -R -t httpd_sys_rw_content_t /var/www/html/wordpress
+```
+
+```console
+[root@wrosendo42 ~]# senha: EWj1PfW&%Xb&6tB1eh
+```
+
+```console
+[root@wrosendo42 ~]#
+```
 
 <h2 id="ref">
 	<b>References</b>
@@ -825,3 +886,10 @@ phpinfo();
 <p><a href="https://mariadb.com/kb/en/grant/"><i><b>GRANT</b></i></a></p>
 <p><a href="https://www.tecmint.com/install-php-8-on-centos/"><i><b>How to Install PHP 8 on CentOS/RHEL 8/7</b></i></a></p>
 <p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/using_selinux/configuring-selinux-for-applications-and-services-with-non-standard-configurations_using-selinux"><i><b>CONFIGURING SELINUX FOR APPLICATIONS AND SERVICES</b></i></a></p>
+<p><a href="https://serverfault.com/questions/240015/how-do-i-allow-mysql-connections-through-selinux"><i><b>How do I allow MySQL connections through SELinux?</b></i></a></p>
+<p><a href="https://linuxize.com/post/how-to-install-php-on-centos-8/"><i><b>How to Install PHP on CentOS 8</b></i></a></p>
+<p><a href="https://unix.stackexchange.com/questions/200234/linux-commandline-can-connect-but-webserver-or-php-cant-connect"><i><b>Hlinux commandline can connect but webserver (or php) can't connect</b></i></a></p>
+<p><a href="https://stackoverflow.com/questions/25055008/reverse-proxy-with-apache-on-centos-6"><i><b>Reverse Proxy with Apache on Centos 6</b></i></a></p>
+<p><a href="https://linux.die.net/man/8/httpd_selinux"><i><b>httpd_selinux(8) - Linux man page</b></i></a></p>
+<p><a href="https://www.atlantic.net/vps-hosting/how-to-install-wordpress-centos-8-server/"><i><b>How to Install WordPress on a CentOS 8 Server</b></i></a></p>
+<p><a href="https://www.liquidweb.com/kb/how-to-install-wordpress-on-centos-7/"><i><b>How to Install WordPress On CentOS 7</b></i></a></p>
