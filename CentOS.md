@@ -910,6 +910,10 @@ depois
 <p><a href="https://www.openlogic.com/blog/what-centos"><i><b>What is a CentOS?</b></i></a></p>
 <p><a href="https://www.openlogic.com/blog/centos-vs-debian"><i><b>CentOS vs Debian</b></i></a></p>
 
+->dnf vs yum
+<p><a href="https://marcomapa.com/artigos/?p=1009"><i><b>difference between dnf and yum</b></i></a></p>
+<p><a href="https://blog.eldernode.com/what-is-different-between-dnf-and-yum/"><i><b>what is different between DNF and yum [Quick review]</b></i></a></p>
+
 ->apt vs aptitude
 <p><a href="https://www.tecmint.com/difference-between-apt-and-aptitude/"><i><b>What is APT and Aptitude?</b></i></a></p>
 
@@ -918,6 +922,8 @@ depois
 <p><a href="https://www.tecmint.com/mandatory-access-control-with-selinux-or-apparmor-linux/"><i><b>Impementing Mandatory Access Control with SELinux or AppArmor in Linux</b></i></a></p>
 <p><a href="https://www.redhat.com/sysadmin/apparmor-selinux-isolation"><i><b>A comparision of AppArmor and SELinux</b></i></a></p>
 <p><a href="https://elinux.org/images/3/39/SecureOS_nakamura.pdf"><i><b>SELinux vs AppArmor</b></i></a></p>
+<p><a href="https://www.incibe-cert.es/en/blog/selinux-and-mac"><i><b>SELinux and Mandatory Access Control</b></i></a></p>
+<p><a href="https://www.hpe.com/us/en/insights/articles/how-to-set-up-selinux-right-the-first-time-1901.html"><i><b>How to set up SELinux right, the first time</b></i></a></p>
 
 -> ssh
 <p><a href="https://searchsecurity.techtarget.com/definition/Secure-Shell"><i><b>Secure Socket Shell (SSH)</b></i></a></p>
@@ -958,6 +964,7 @@ depois
 
 ->cron
 <p><a href="https://www.digitalocean.com/community/tutorials/how-to-use-cron-to-automate-tasks-centos-8-pt"><i><b>How to use the cron</b></i></a></p>
+<p><a href="https://serverspace.io/support/help/automate-regular-tasks-cron-centos-8/"><i><b>How to Automate Regular Tasks with Cron on CentOS 8</b></i></a></p>
 
 ->LVM
 <p><a href="https://www.thegeekdiary.com/redhat-centos-a-beginners-guide-to-lvm-logical-volume-manager/"><i><b>Beginner's Guide to LVM</b></i></a></p>
@@ -983,15 +990,10 @@ depois
 <p><a href="https://unix.stackexchange.com/questions/200234/linux-commandline-can-connect-but-webserver-or-php-cant-connect"><i><b>Hlinux commandline can connect but webserver (or php) can't connect</b></i></a></p>
 <p><a href="https://stackoverflow.com/questions/25055008/reverse-proxy-with-apache-on-centos-6"><i><b>Reverse Proxy with Apache on Centos 6</b></i></a></p>
 <p><a href="https://linux.die.net/man/8/httpd_selinux"><i><b>httpd_selinux(8) - Linux man page</b></i></a></p>
+<p><a href="https://serverfault.com/questions/240015/how-do-i-allow-mysql-connections-through-selinux"><i><b>How do I allow MySQL connections through SELinux?</b></i></a></p>
+<p><a href="https://pt.linux-console.net/?p=2404"><i><b>Como instalar Lighttpd com PHP e MariaDB no CentOS / RHEL 8/7</b></i></a></p>
 
 ->wordpress
 <p><a href="https://www.atlantic.net/vps-hosting/how-to-install-wordpress-centos-8-server/"><i><b>How to Install WordPress on a CentOS 8 Server</b></i></a></p>
 <p><a href="https://www.liquidweb.com/kb/how-to-install-wordpress-on-centos-7/"><i><b>How to Install WordPress On CentOS 7</b></i></a></p>
-<p><a href="https://serverspace.io/support/help/automate-regular-tasks-cron-centos-8/"><i><b>How to Automate Regular Tasks with Cron on CentOS 8</b></i></a></p>
-<p><a href="https://serverfault.com/questions/240015/how-do-i-allow-mysql-connections-through-selinux"><i><b>How do I allow MySQL connections through SELinux?</b></i></a></p>
-<p><a href="https://pt.linux-console.net/?p=2404"><i><b>Como instalar Lighttpd com PHP e MariaDB no CentOS / RHEL 8/7</b></i></a></p>
-<p><a href="https://www.incibe-cert.es/en/blog/selinux-and-mac"><i><b>SELinux and Mandatory Access Control</b></i></a></p>
-<p><a href="https://www.hpe.com/us/en/insights/articles/how-to-set-up-selinux-right-the-first-time-1901.html"><i><b>How to set up SELinux right, the first time</b></i></a></p>
-<p><a href="https://marcomapa.com/artigos/?p=1009"><i><b>difference between dnf and yum</b></i></a></p>
 <p><a href="https://www.tecmint.com/difference-between-apt-and-aptitude/"><i><b>What is APT and Aptitude? and What’s real Difference Between Them?</b></i></a></p>
-<p><a href="https://blog.eldernode.com/what-is-different-between-dnf-and-yum/"><i><b>what is different between DNF and yum [Quick review]</b></i></a></p>
