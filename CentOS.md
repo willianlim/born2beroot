@@ -92,6 +92,7 @@ Overview
 
 - CentOS — Community Enterprise Operating System — is a free, open source Linux distribution. CentOS is functionally compatible with Red Hat Enterprise Linux (RHEL). And it's derived from RHEL.
 - CentOS is good for enterprise Linux without the costs of RHEL.
+- CentOS Linux 8, as a rebuild of RHEL 8, will end at the end of 2021. CentOS Stream continues after that date, serving as the upstream (development) branch of Red Hat Enterprise Linux.
 </p>
 
 <h2 id="CentOS vs Debian">
@@ -115,7 +116,7 @@ Overview
 
 <p>
 
-- Security-Enhanced Linux (SELinux) is a mandatory access control (MAC) security mechanism implemented in the kernel. SELinux was first introduced in CentOS 4 and significantly enhanced in later CentOS releases. These enhancements mean that content varies as to how to approach SELinux over time to solve problems.
+- Security-Enhanced Linux (SELinux) is a mandatory access control (MAC) security mechanism implemented in the kernel. SELinux was first introduced in CentOS 4 and significantly enhanced in later CentOS releases. These enhancements mean that content varies as to how to approach SELinux over time to solve problems. SELinux is basically about  defining the access of a process type.
 </p>
 
 <h2 align=center id="LVM">
@@ -135,6 +136,33 @@ LVM stands for Logical Volume Management. It is a system of managing logical vol
 - VG – Many PV is combined into one VG. You can create many VGs and each of them has a unique name.
 - LV – You can create many LVs from a VG. You can extend, reduce the LV size on the fly. The LV also has unique names. You format the LV into ext4, zfs, btrfs etc filesystems, mount it and use it as you do other ordinary partitions.
 </p>
+
+<h2 align=center id="APT and Aptitude">
+APT and Aptitude
+</h2>
+<h2 id="apt and aptitu">
+Overview
+</h2>
+Aptitude and apt-get are two of the popular tools which handle package management. Both are capable of handling all kinds of activities on packages including installation, removal, search etc.
+
+<h2 id="What is Apt">
+What is Apt
+</h2>
+Apt or Advanced Packaging Tool is a free and open source software which gracefully handles software installation and removal. Initially it was designed for Debian’s .deb packages
+
+<h2 align=center id="dnf and yum">
+dnf and yum
+</h2>
+<h2 id="dnf">
+dnf
+</h2>
+DNF stands for Dandified YUM is a software package manager for RPM(Red Hat Package Manager)-based Linux distributions. It is used to install, update, and remove packages in the Fedora/RHEL/CentOS operating system.
+It is the default package manager of Fedora 22, CentOS8, and RHEL8.
+<h2 id="yum">
+yum
+</h2>
+Yum Package Manager has been replaced by DNF Package Manager since many long-standing issues in Yum remain unresolved.
+These problems include poor performance, excessive memory usage, slowdown for dependency resolution.
 
 <h2 align=center id="SSH">
 SSH
@@ -508,7 +536,19 @@ cron
 ```
 
 ```console
-[root@wrosendo42 ~]#
+[root@wrosendo42 ~]# crontab -e
+```
+
+```console
+[root@wrosendo42 ~]# crontab -l
+```
+
+```console
+[root@wrosendo42 ~]# crontab -u <username> -l
+```
+
+```console
+[root@wrosendo42 ~]# crontab -u <username> -e
 ```
 
 ```console
@@ -820,9 +860,13 @@ Wordpress
 ```console
 [root@wrosendo42 ~]# sudo vim /var/www/html/wp-config.php
 ```
-
+antes
 ```console
 [root@wrosendo42 ~]# sudo chown -R lighttpd:lighttpd /var/www/html/wordpress
+```
+depois
+```console
+[root@wrosendo42 ~]# sudo chown -R lighttpd:lighttpd /var/www/html/
 ```
 
 ```console
@@ -840,6 +884,19 @@ Wordpress
 ```console
 [root@wrosendo42 ~]#
 ```
+
+```console
+[root@wrosendo42 ~]#
+```
+
+```console
+[root@wrosendo42 ~]# sleep $(last reboot -F | head -1 | awk '{print $8}' | tr ':' ' ' | awk '{printf("%d", (($2%10)*60)+$3)}')
+```
+
+```console
+[root@wrosendo42 ~]# chmod 755 monitoring.sh sleep.sh
+```
+
 
 <h2 id="ref">
 	<b>References</b>
@@ -893,3 +950,11 @@ Wordpress
 <p><a href="https://linux.die.net/man/8/httpd_selinux"><i><b>httpd_selinux(8) - Linux man page</b></i></a></p>
 <p><a href="https://www.atlantic.net/vps-hosting/how-to-install-wordpress-centos-8-server/"><i><b>How to Install WordPress on a CentOS 8 Server</b></i></a></p>
 <p><a href="https://www.liquidweb.com/kb/how-to-install-wordpress-on-centos-7/"><i><b>How to Install WordPress On CentOS 7</b></i></a></p>
+<p><a href="https://serverspace.io/support/help/automate-regular-tasks-cron-centos-8/"><i><b>How to Automate Regular Tasks with Cron on CentOS 8</b></i></a></p>
+<p><a href="https://serverfault.com/questions/240015/how-do-i-allow-mysql-connections-through-selinux"><i><b>How do I allow MySQL connections through SELinux?</b></i></a></p>
+<p><a href="https://pt.linux-console.net/?p=2404"><i><b>Como instalar Lighttpd com PHP e MariaDB no CentOS / RHEL 8/7</b></i></a></p>
+<p><a href="https://www.incibe-cert.es/en/blog/selinux-and-mac"><i><b>SELinux and Mandatory Access Control</b></i></a></p>
+<p><a href="https://www.hpe.com/us/en/insights/articles/how-to-set-up-selinux-right-the-first-time-1901.html"><i><b>How to set up SELinux right, the first time</b></i></a></p>
+<p><a href="https://marcomapa.com/artigos/?p=1009"><i><b>difference between dnf and yum</b></i></a></p>
+<p><a href="https://www.tecmint.com/difference-between-apt-and-aptitude/"><i><b>What is APT and Aptitude? and What’s real Difference Between Them?</b></i></a></p>
+<p><a href="https://blog.eldernode.com/what-is-different-between-dnf-and-yum/"><i><b>what is different between DNF and yum [Quick review]</b></i></a></p>
