@@ -901,42 +901,77 @@ depois
 <h2 id="ref">
 	<b>References</b>
 </h2>
+->server virtualization
 <p><a href="https://phoenixnap.com/kb/what-is-server-virtualization"><i><b>What is Server Virtualization?</b></i></a></p>
 <p><a href="https://azure.microsoft.com/en-us/overview/what-is-a-virtual-machine/#overview"><i><b>What is a virtual machine(VM)?</b></i></a></p>
 <p><a href="https://phoenixnap.com/kb/what-is-hypervisor-type-1-2"><i><b>What is a Hypervisior?Types of Hypervisors 1 & 2?</b></i></a></p>
+
+-> what is centos
 <p><a href="https://www.openlogic.com/blog/what-centos"><i><b>What is a CentOS?</b></i></a></p>
 <p><a href="https://www.openlogic.com/blog/centos-vs-debian"><i><b>CentOS vs Debian</b></i></a></p>
+
+->apt vs aptitude
 <p><a href="https://www.tecmint.com/difference-between-apt-and-aptitude/"><i><b>What is APT and Aptitude?</b></i></a></p>
+
+-> what is SELinux
 <p><a href="https://wiki.centos.org/HowTos/SELinux"><i><b>SELinux</b></i></a></p>
 <p><a href="https://www.tecmint.com/mandatory-access-control-with-selinux-or-apparmor-linux/"><i><b>Impementing Mandatory Access Control with SELinux or AppArmor in Linux</b></i></a></p>
 <p><a href="https://www.redhat.com/sysadmin/apparmor-selinux-isolation"><i><b>A comparision of AppArmor and SELinux</b></i></a></p>
 <p><a href="https://elinux.org/images/3/39/SecureOS_nakamura.pdf"><i><b>SELinux vs AppArmor</b></i></a></p>
+
+-> ssh
 <p><a href="https://searchsecurity.techtarget.com/definition/Secure-Shell"><i><b>Secure Socket Shell (SSH)</b></i></a></p>
 <p><a href="https://linuxhint.com/enable_ssh_centos8/"><i><b>How to Enable SSH on CentOS 8</b></i></a></p>
 <p><a href="https://ostechnix.com/linux-troubleshooting-semanage-command-not-found-in-centos-7rhel-7/"><i><b>semanage command nott found</b></i></a></p>
+
+-> ufw
 <p><a href="https://shouts.dev/install-and-setup-ufw-firewall-on-centos-8-rhel-8"><i><b>Install and Setup UFW Firewall</b></i></a></p>
+
+-> ip static
 <p><a href="https://linuxconfig.org/rhel-8-configure-static-ip-address"><i><b>How to configure a static IP address</b></i></a></p>
 <p><a href="https://www.snel.com/support/static-ip-configuration-centos-7/"><i><b>ip addres static</b></i></a></p>
 <p><a href="https://www.techrepublic.com/article/how-to-configure-a-static-ip-address-in-centos-7/"><i><b>static IPv4 configuration</b></i></a></p>
 <p><a href="https://www.linuxtechi.com/configure-static-ip-address-rhel8/"><i><b>How to Configure Static IP Address in RHEL 8</b></i></a></p>
+
+-> police security
 <p><a href="https://www.server-world.info/en/note?os=CentOS_8&p=pam&f=1"><i><b>Pwquality : Set Password Rules</b></i></a></p>
+
+-> sudo setting
 <p><a href="https://www.tecmint.com/sudoers-configurations-for-setting-sudo-in-linux/"><i><b>Setting ‘sudo’ in Linux</b></i></a></p>
+
+-> Hostname, Users and Groups
+-> hostname
 <p><a href="https://www.cyberciti.biz/faq/centos-8-change-hostname-computer-name-command/"><i><b>Change Hostname</b></i></a></p>
+->users
 <p><a href="https://www.cyberciti.biz/faq/create-a-new-user-account-in-centos-7-8-linux/"><i><b>How to create new user</b></i></a></p>
 <p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/s2-users-cl-tools"><i><b>Managing Users via command-line</b></i></a></p>
+
+->groups
 <p><a href="https://www.techrepublic.com/article/how-to-create-users-and-groups-in-linux-from-the-command-line/"><i><b>How to create users and groups</b></i></a></p>
 <p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/s2-groups-cl-tools"><i><b>Managing Groups via command-line</b></i></a></p>
 <p><a href="https://unix.stackexchange.com/questions/29570/how-do-i-remove-a-user-from-a-group"><i><b>How do I remove a user from a group?</b></i></a></p>
 <p><a href="https://linuxize.com/post/how-to-add-user-to-sudoers-in-centos/"><i><b>How to Add User to Sudoers in CentOS</b></i></a></p>
 <p><a href="https://github.com/caroldaniel/42sp-cursus-born2beroot/blob/master/guides/CentOS-en.md"><i><b>How to list all users in group</b></i></a></p>
+
+->wall
 <p><a href="https://phoenixnap.com/kb/linux-wall"><i><b>How to use the wall</b></i></a></p>
+
+->cron
 <p><a href="https://www.digitalocean.com/community/tutorials/how-to-use-cron-to-automate-tasks-centos-8-pt"><i><b>How to use the cron</b></i></a></p>
+
+->LVM
 <p><a href="https://www.thegeekdiary.com/redhat-centos-a-beginners-guide-to-lvm-logical-volume-manager/"><i><b>Beginner's Guide to LVM</b></i></a></p>
 <p><a href="https://linuxhint.com/install_lvm_centos/"><i><b>How to install and Configure LVM on CentOS</b></i></a></p>
 <p><a href="https://docs.centos.org/en-US/centos/install-guide/CustomSpoke-x86/"><i><b>Manual Partitioning</b></i></a></p>
 <p><a href="https://www.server-world.info/en/note?os=CentOS_8&p=lvm&f=3"><i><b>LVM : Manage Logical Volumes</b></i></a></p>
+
+-> SSH
 <p><a href="https://askubuntu.com/questions/264046/how-to-ssh-on-a-port-other-than-22"><i><b>How to SSH on a port</b></i></a></p>
+
+->ufw
 <p><a href="https://unix.stackexchange.com/questions/182959/how-can-i-enable-ufw-automatically-on-boot"><i><b>ufw enable automatic</b></i></a></p>
+
+->lighttpd, php, mairadb
 <p><a href="https://www.tecmint.com/install-lighttpd-with-php-fpm-mariadb-on-centos/"><i><b>How to Install Lighttpd with PHP and MariaDB on CentOS/RHEL 8/7</b></i></a></p>
 <p><a href="https://mariadb.com/kb/en/mariadb-basics/"><i><b>MariaDB Basics</b></i></a></p>
 <p><a href="https://mariadb.com/kb/en/create-user/"><i><b>CREATE USER MariaDB</b></i></a></p>
@@ -948,6 +983,8 @@ depois
 <p><a href="https://unix.stackexchange.com/questions/200234/linux-commandline-can-connect-but-webserver-or-php-cant-connect"><i><b>Hlinux commandline can connect but webserver (or php) can't connect</b></i></a></p>
 <p><a href="https://stackoverflow.com/questions/25055008/reverse-proxy-with-apache-on-centos-6"><i><b>Reverse Proxy with Apache on Centos 6</b></i></a></p>
 <p><a href="https://linux.die.net/man/8/httpd_selinux"><i><b>httpd_selinux(8) - Linux man page</b></i></a></p>
+
+->wordpress
 <p><a href="https://www.atlantic.net/vps-hosting/how-to-install-wordpress-centos-8-server/"><i><b>How to Install WordPress on a CentOS 8 Server</b></i></a></p>
 <p><a href="https://www.liquidweb.com/kb/how-to-install-wordpress-on-centos-7/"><i><b>How to Install WordPress On CentOS 7</b></i></a></p>
 <p><a href="https://serverspace.io/support/help/automate-regular-tasks-cron-centos-8/"><i><b>How to Automate Regular Tasks with Cron on CentOS 8</b></i></a></p>
