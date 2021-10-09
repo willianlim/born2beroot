@@ -992,23 +992,60 @@ para gerar a signature
 [root@wrosendo42 ~]#
 ```
 
-user@DESKTOP-3D91412:/mnt/c/Users/Willian$ cd VirtualBox\ VMs/
-user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs$ ls
- 42saopaulo-virtualbox   CentOS  'CentOS Linus 8 Clone'  'CentOS Linus 8 Clone 2'  'CentOS Linux 8'
-user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs$ cd CentOS
-CentOS/                 CentOS Linus 8 Clone/   CentOS Linus 8 Clone 2/ CentOS Linux 8/
-user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs$ cd CentOS
-CentOS/                 CentOS Linus 8 Clone/   CentOS Linus 8 Clone 2/ CentOS Linux 8/
-user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs$ cd CentOS\ Linux\ 8/
-user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs/CentOS Linux 8$ ls
-'CentOS Linux 8.vbox'  'CentOS Linux 8.vbox-prev'  'CentOS Linux 8.vdi'   Logs   Snapshots
-user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs/CentOS Linux 8$ sha1sum 'CentOS Linux 8.vdi' > signature.txt
-user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs/CentOS Linux 8$ ls
-'CentOS Linux 8.vbox'  'CentOS Linux 8.vbox-prev'  'CentOS Linux 8.vdi'   Logs   Snapshots   signature.txt
-user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs/CentOS Linux 8$ cat signature.txt
-e3cdf415ef897cb0815aec0c86e2a9ef3a098cbe  CentOS Linux 8.vdi
-user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs/CentOS Linux 8$
+para encontrar o path da sua máquina virtual
+va nas configurações da máquina virtual
 
+```console
+user@DESKTOP-3D91412:/mnt/c/Users/Willian$ cd VirtualBox\ VMs/
+```
+
+```console
+user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs$ ls
+
+ 42saopaulo-virtualbox   CentOS  'CentOS Linus 8 Clone'  'CentOS Linus 8 Clone 2'  'CentOS Linux 8'
+```
+
+```console
+user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs$ cd CentOS
+
+CentOS/                 CentOS Linus 8 Clone/   CentOS Linus 8 Clone 2/ CentOS Linux 8/
+```
+
+```console
+user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs$ cd CentOS
+
+CentOS/                 CentOS Linus 8 Clone/   CentOS Linus 8 Clone 2/ CentOS Linux 8/
+```
+
+```console
+user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs$ cd CentOS\ Linux\ 8/
+```
+
+```console
+user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs/CentOS Linux 8$ ls
+
+'CentOS Linux 8.vbox'  'CentOS Linux 8.vbox-prev'  'CentOS Linux 8.vdi'   Logs   Snapshots
+```
+
+```console
+user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs/CentOS Linux 8$ sha1sum 'CentOS Linux 8.vdi' > signature.txt
+```
+
+```console
+user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs/CentOS Linux 8$ ls
+
+'CentOS Linux 8.vbox'  'CentOS Linux 8.vbox-prev'  'CentOS Linux 8.vdi'   Logs   Snapshots   signature.txt
+```
+
+```console
+user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs/CentOS Linux 8$ cat signature.txt
+
+e3cdf415ef897cb0815aec0c86e2a9ef3a098cbe  CentOS Linux 8.vdi
+```
+
+```console
+user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs/CentOS Linux 8$
+```
 <h2 id="ref">
 	<b>References</b>
 </h2>
