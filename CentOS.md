@@ -304,6 +304,10 @@ Install and Setup UFW Firewall
 ```
 
 ```console
+[root@wrosendo42 ~]# sudo ufw allow 80
+```
+
+```console
 [root@wrosendo42 ~]# sudo systemctl start ufw
 ```
 
@@ -365,6 +369,11 @@ Users
 [root@wrosendo42 ~]# passwd <username>
 ```
 
+list of the users in linux
+```console
+[root@wrosendo42 ~]# vi /etc/passwd
+```
+
 ```console
 [root@wrosendo42 ~]#
 ```
@@ -389,12 +398,45 @@ Group
 [root@wrosendo42 ~]# gpasswd [options] <username> <group_name>
 ```
 
+list of users in the group
 ```console
 [root@wrosendo42 ~]# getent group <groupname>
 ```
 
 ```console
 [root@wrosendo42 ~]# id [options]
+```
+
+```console
+[root@wrosendo42 ~]# usermod -aG wheel username (to add in sudo group)
+```
+
+list of groups in linux
+```console
+[root@wrosendo42 ~]# vi /etc/group
+```
+
+Add a user a group
+```console
+[root@wrosendo42 ~]# usermod -aG <groupname> <username>
+```
+
+adds user to group;
+```console
+[root@wrosendo42 ~]# gpasswd -a <username> <groupname>
+```
+
+removes user from group
+```console
+[root@wrosendo42 ~]# gpasswd -d <username> <groupname>
+```
+
+```console
+[root@wrosendo42 ~]#
+```
+
+```console
+[root@wrosendo42 ~]#
 ```
 
 
@@ -419,7 +461,7 @@ Defaults	secure_path=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bi
 Defaults	requiretty
 
 # Create a Sudo Log File
-Defatults	logfile=/var/log/sudo/sudo.log
+Defaults	logfile=/var/log/sudo/sudo.log
 
 # Show Custom Message When You Enter Wrong sudo Password
 Defaults	badpass_message="Password is wrong, please try again"
@@ -825,6 +867,29 @@ phpinfo();
 ```
 
 ```console
+[root@wrosendo42 ~]# vi /etc/lighttpd/lighttpd.conf
+
+:set number
+
+118 ##
+119 ## Document root
+120 ##
+121 server.document-root = server_root + "/html"
+```
+
+```console
+[root@wrosendo42 ~]# cp /var/www/lighttpd/* /var/www/html/
+```
+
+```console
+[root@wrosendo42 ~]# mv /var/www/lighttpd /var/www/html/
+```
+
+```console
+[root@wrosendo42 ~]#
+```
+
+```console
 [root@wrosendo42 ~]#
 ```
 
@@ -850,15 +915,19 @@ Wordpress
 ```
 
 ```console
-[root@wrosendo42 ~]# cp wordpress/wp-config-sample.php wordpress/wp-config.php
+[root@wrosendo42 ~]# mv wordpress/wp-config-sample.php wordpress/wp-config.php
 ```
 
 ```console
-[root@wrosendo42 ~]# sudo cp -r ~/wordpress/* /var/www/html
+[root@wrosendo42 ~]# sudo cp -r /wordpress/* /var/www/html
 ```
 
 ```console
-[root@wrosendo42 ~]# sudo vim /var/www/html/wp-config.php
+[root@wrosendo42 ~]# mv /wordpress /var/www/html/
+```
+
+```console
+[root@wrosendo42 ~]# sudo vi /var/www/html/wp-config.php
 ```
 antes
 ```console
@@ -878,7 +947,7 @@ depois
 ```
 
 ```console
-[root@wrosendo42 ~]# senha: EWj1PfW&%Xb&6tB1eh
+[root@wrosendo42 ~]# senha: ZXAb2bU3(NYr#0CGCl
 ```
 
 ```console
@@ -886,7 +955,7 @@ depois
 ```
 
 ```console
-[root@wrosendo42 ~]#
+[root@wrosendo42 ~]# 192.168.0.110/wp-admin
 ```
 
 ```console
@@ -897,6 +966,48 @@ depois
 [root@wrosendo42 ~]# chmod 755 monitoring.sh sleep.sh
 ```
 
+
+```console
+[root@wrosendo42 ~]# mv /var/www/html/index.html old.index.html
+```
+
+para gerar a signature
+```console
+[root@wrosendo42 ~]# /mnt/c/Users/Willian$ cd VirtualBox\ VMs/
+```
+
+```console
+[root@wrosendo42 ~]# cd CentOS\ Linux\ 8/ (nome da máquina criada)
+```
+
+```console
+[root@wrosendo42 ~]# /mnt/c/Users/Willian/VirtualBox VMs/CentOS Linux 8$ sha1sum 'CentOS Linux 8.vdi' > signature.txt
+```
+
+```console
+[root@wrosendo42 ~]#
+```
+
+```console
+[root@wrosendo42 ~]#
+```
+
+user@DESKTOP-3D91412:/mnt/c/Users/Willian$ cd VirtualBox\ VMs/
+user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs$ ls
+ 42saopaulo-virtualbox   CentOS  'CentOS Linus 8 Clone'  'CentOS Linus 8 Clone 2'  'CentOS Linux 8'
+user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs$ cd CentOS
+CentOS/                 CentOS Linus 8 Clone/   CentOS Linus 8 Clone 2/ CentOS Linux 8/
+user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs$ cd CentOS
+CentOS/                 CentOS Linus 8 Clone/   CentOS Linus 8 Clone 2/ CentOS Linux 8/
+user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs$ cd CentOS\ Linux\ 8/
+user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs/CentOS Linux 8$ ls
+'CentOS Linux 8.vbox'  'CentOS Linux 8.vbox-prev'  'CentOS Linux 8.vdi'   Logs   Snapshots
+user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs/CentOS Linux 8$ sha1sum 'CentOS Linux 8.vdi' > signature.txt
+user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs/CentOS Linux 8$ ls
+'CentOS Linux 8.vbox'  'CentOS Linux 8.vbox-prev'  'CentOS Linux 8.vdi'   Logs   Snapshots   signature.txt
+user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs/CentOS Linux 8$ cat signature.txt
+e3cdf415ef897cb0815aec0c86e2a9ef3a098cbe  CentOS Linux 8.vdi
+user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs/CentOS Linux 8$
 
 <h2 id="ref">
 	<b>References</b>
@@ -929,6 +1040,8 @@ depois
 <p><a href="https://searchsecurity.techtarget.com/definition/Secure-Shell"><i><b>Secure Socket Shell (SSH)</b></i></a></p>
 <p><a href="https://linuxhint.com/enable_ssh_centos8/"><i><b>How to Enable SSH on CentOS 8</b></i></a></p>
 <p><a href="https://ostechnix.com/linux-troubleshooting-semanage-command-not-found-in-centos-7rhel-7/"><i><b>semanage command nott found</b></i></a></p>
+<p><a href="https://askubuntu.com/questions/264046/how-to-ssh-on-a-port-other-than-22"><i><b>How to SSH on a port</b></i></a></p>
+<p><a href="https://www.thorntech.com/passwords-vs-ssh/"><i><b>Passwords vs. SSH keys – what’s better for authentication?</b></i></a></p>
 
 -> ufw
 <p><a href="https://shouts.dev/install-and-setup-ufw-firewall-on-centos-8-rhel-8"><i><b>Install and Setup UFW Firewall</b></i></a></p>
@@ -944,6 +1057,8 @@ depois
 
 -> sudo setting
 <p><a href="https://www.tecmint.com/sudoers-configurations-for-setting-sudo-in-linux/"><i><b>Setting ‘sudo’ in Linux</b></i></a></p>
+<p><a href="https://www.tecmint.com/sudo-insult-when-enter-wrong-password/"><i><b>Let Sudo Insult You When You Enter Incorrect Password</b></i></a></p>
+<p><a href="https://www.geeksforgeeks.org/tty-command-in-linux-with-examples/"><i><b>tty command in Linux with examples</b></i></a></p>
 
 -> Hostname, Users and Groups
 -> hostname
@@ -951,6 +1066,10 @@ depois
 ->users
 <p><a href="https://www.cyberciti.biz/faq/create-a-new-user-account-in-centos-7-8-linux/"><i><b>How to create new user</b></i></a></p>
 <p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/s2-users-cl-tools"><i><b>Managing Users via command-line</b></i></a></p>
+<p><a href="http://www.bosontreinamentos.com.br/linux/certificacao-lpic-1/comando-su-trocando-o-usuario-na-linha-de-comandos-lpic-1/"><i><b>Comando su – Trocando o usuário na linha de comandos</b></i></a></p>
+<p><a href="https://stackoverflow.com/questions/49202275/permission-denied-when-starting-bashrc-on-ubuntu-on-windows"><i><b>Permission denied when starting .bashrc on ubuntu on windows</b></i></a></p>
+<p><a href="https://askubuntu.com/questions/793507/rm-cannot-remove-directory-permission-denied"><i><b>rm: cannot remove directory/: Permission denied</b></i></a></p>
+<p><a href="https://stackoverflow.com/questions/47806576/linux-username-is-not-in-the-sudoers-file-this-incident-will-be-reported"><i><b>Linux: 'Username' is not in the sudoers file.</b></i></a></p>
 
 ->groups
 <p><a href="https://www.techrepublic.com/article/how-to-create-users-and-groups-in-linux-from-the-command-line/"><i><b>How to create users and groups</b></i></a></p>
@@ -971,9 +1090,6 @@ depois
 <p><a href="https://linuxhint.com/install_lvm_centos/"><i><b>How to install and Configure LVM on CentOS</b></i></a></p>
 <p><a href="https://docs.centos.org/en-US/centos/install-guide/CustomSpoke-x86/"><i><b>Manual Partitioning</b></i></a></p>
 <p><a href="https://www.server-world.info/en/note?os=CentOS_8&p=lvm&f=3"><i><b>LVM : Manage Logical Volumes</b></i></a></p>
-
--> SSH
-<p><a href="https://askubuntu.com/questions/264046/how-to-ssh-on-a-port-other-than-22"><i><b>How to SSH on a port</b></i></a></p>
 
 ->ufw
 <p><a href="https://unix.stackexchange.com/questions/182959/how-can-i-enable-ufw-automatically-on-boot"><i><b>ufw enable automatic</b></i></a></p>
