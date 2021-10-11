@@ -1046,6 +1046,81 @@ e3cdf415ef897cb0815aec0c86e2a9ef3a098cbe  CentOS Linux 8.vdi
 ```console
 user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs/CentOS Linux 8$
 ```
+
+<h2 id="Wordpress">
+Wordpress
+</h2>
+
+```console
+[root@wrosendo42 ~]# sudo apt install fail2ban
+```
+
+```console
+[root@wrosendo42 ~]# systemctl start fail2ban
+```
+
+```console
+[root@wrosendo42 ~]# systemctl enable fail2ban
+```
+
+```console
+[root@wrosendo42 ~]# sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+```
+
+```console
+[root@wrosendo42 ~]# sudo vi /etc/fail2ban/jail.local
+
+# take the comment off the line with ignoreip
+ignoreip = 127.0.0.1/8 ::1
+
+# then change the POSTFIX values, although you don't even need it because the email server doesn't get installed
+[postfix]
+enabled  = true
+port     = smtp,ssmtp
+filter   = postfix
+logpath  = /var/log/mail.log
+
+# change ssh configuration[sshd]
+enabled   = true
+maxretry  = 3
+findtime  = 1d
+bantime   = 10m
+port      = 4242
+
+# Save file and exit
+```
+
+```console
+[root@wrosendo42 ~]# sudo systemctl restart fail2ban
+```
+
+```console
+[root@wrosendo42 ~]#
+```
+
+Fail2Ban useful commands
+
+(shows fail2ban service status)
+```console
+[root@wrosendo42 ~]# sudo fail2ban-client status
+```
+
+(shows fail2ban status for sshd, and banned ips)
+```console
+[root@wrosendo42 ~]# sudo fail2ban-client status sshd
+```
+
+(takes ip from banned list)
+```console
+[root@wrosendo42 ~]# sudo fail2ban-client set sshd unbanip 11.22.33.44
+```
+
+(puts ip in the banned list)
+```console
+[root@wrosendo42 ~]# sudo fail2ban-client set sshd banip 11.22.33.44
+```
+
+
 <h2 id="ref">
 	<b>References</b>
 </h2>
@@ -1150,3 +1225,8 @@ user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs/CentOS Linux 8$
 <p><a href="https://www.atlantic.net/vps-hosting/how-to-install-wordpress-centos-8-server/"><i><b>How to Install WordPress on a CentOS 8 Server</b></i></a></p>
 <p><a href="https://www.liquidweb.com/kb/how-to-install-wordpress-on-centos-7/"><i><b>How to Install WordPress On CentOS 7</b></i></a></p>
 <p><a href="https://www.tecmint.com/difference-between-apt-and-aptitude/"><i><b>What is APT and Aptitude? and What’s real Difference Between Them?</b></i></a></p>
+
+->Fail2ban
+<p><a href="https://www.cyberciti.biz/faq/how-to-protect-ssh-with-fail2ban-on-centos-8/"><i><b>How To Protect SSH With Fail2Ban on CentOS 8</b></i></a></p>
+<p><a href="https://www.youtube.com/watch?v=kgdoVeyoO2E"><i><b>Fail2ban Tutorial | How to Secure Your Server</b></i></a></p>
+<p><a href="https://guiatech.net/como-descobrir-seu-endereco-ip/"><i><b>How to find out your IP address</b></i></a></p>
