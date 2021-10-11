@@ -135,6 +135,7 @@ LVM stands for Logical Volume Management. It is a system of managing logical vol
 - PV – It’s a raw hard drive that it initialized to work with LVM, such as /dev/sdb, /dev/sdc, /dev/sdb1 etc.
 - VG – Many PV is combined into one VG. You can create many VGs and each of them has a unique name.
 - LV – You can create many LVs from a VG. You can extend, reduce the LV size on the fly. The LV also has unique names. You format the LV into ext4, zfs, btrfs etc filesystems, mount it and use it as you do other ordinary partitions.
+- Encrypted volumes allow you to keep many files securely encrypted within one encrypted file volume. Individual files can easily be accessed (assuming the volume is mounted as a drive using the password). Dismount the volume when finished and no one else will be able to access the files in the volume without 'mounting' back to a drive (and to do this the correct Pass Phrase is required).
 </p>
 
 <h2 align=center id="APT and Aptitude">
@@ -258,6 +259,10 @@ UFW
 <h2 id="UF1">
 Overview
 </h2>
+
+- According to Ubuntu, Uncomplicated Firewall (ufw) is a frontend for iptables and is particularly well-suited for host-based firewalls. ufw provides a framework for managing netfilter, as well as a command-line interface for manipulating the firewall.
+
+- Firewall is a network security system that filters and controls the traffic on a predetermined set of rules. This is an intermediary system between the device and the internet.
 
 <h2 id="UF2">
 Install and Setup UFW Firewall
@@ -443,6 +448,8 @@ removes user from group
 <h2 align=center id="Setting 'sudo' in linux">
 Setting 'sudo' in linux
 </h2>
+
+sudo allows a permitted user to execute a command as root (or another user), as specified by the security policy
 
 ```console
 [root@wrosendo42 ~]# dnf install sudo
@@ -1047,9 +1054,15 @@ e3cdf415ef897cb0815aec0c86e2a9ef3a098cbe  CentOS Linux 8.vdi
 user@DESKTOP-3D91412:/mnt/c/Users/Willian/VirtualBox VMs/CentOS Linux 8$
 ```
 
-<h2 id="Wordpress">
-Wordpress
+<h2 id="Fail2Ban">
+Fail2Ban
 </h2>
+
+- Helps prevetn brute-force attacks
+- watches logs for authentication failure
+- Create firewall rules to block IP addresses
+- Able to protect multiple services
+- Completely customizable
 
 ```console
 [root@wrosendo42 ~]# sudo apt install fail2ban
@@ -1098,7 +1111,10 @@ port      = 4242
 [root@wrosendo42 ~]#
 ```
 
+<h2 id="Fail2Ban useful commands">
 Fail2Ban useful commands
+</h2>
+
 
 (shows fail2ban service status)
 ```console
@@ -1128,6 +1144,7 @@ Fail2Ban useful commands
 <p><a href="https://phoenixnap.com/kb/what-is-server-virtualization"><i><b>What is Server Virtualization?</b></i></a></p>
 <p><a href="https://azure.microsoft.com/en-us/overview/what-is-a-virtual-machine/#overview"><i><b>What is a virtual machine(VM)?</b></i></a></p>
 <p><a href="https://phoenixnap.com/kb/what-is-hypervisor-type-1-2"><i><b>What is a Hypervisior?Types of Hypervisors 1 & 2?</b></i></a></p>
+<p><a href="http://quickcrypto.com/volume-encryption-software.html"><i><b>Volume Encryption</b></i></a></p>
 
 -> what is centos
 <p><a href="https://www.openlogic.com/blog/what-centos"><i><b>What is a CentOS?</b></i></a></p>
@@ -1157,6 +1174,7 @@ Fail2Ban useful commands
 
 -> ufw
 <p><a href="https://shouts.dev/install-and-setup-ufw-firewall-on-centos-8-rhel-8"><i><b>Install and Setup UFW Firewall</b></i></a></p>
+<p><a href="https://www.geeksforgeeks.org/how-to-setup-firewall-in-linux/"><i><b>How to setup firewall in Linux?</b></i></a></p>
 
 -> ip static
 <p><a href="https://linuxconfig.org/rhel-8-configure-static-ip-address"><i><b>How to configure a static IP address</b></i></a></p>
