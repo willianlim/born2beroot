@@ -332,6 +332,8 @@ Hostname, Users and Groups
 Hostname
 </h2>
 
+A hostname is a name which is given to a computer and it attached to the network.
+
 ```console
 [root@wrosendo42 ~]# sudo vi /etc/hostname
 ```
@@ -1193,6 +1195,8 @@ Fail2Ban useful commands
 -> Hostname, Users and Groups
 -> hostname
 <p><a href="https://www.cyberciti.biz/faq/centos-8-change-hostname-computer-name-command/"><i><b>Change Hostname</b></i></a></p>
+<p><a href="https://www.geeksforgeeks.org/hostname-command-in-linux-with-examples/#:~:text=hostname%20command%20in%20Linux%20is,uniquely%20identify%20over%20a%20network."><i><b>hostname command in Linux with examples</b></i></a></p>
+
 ->users
 <p><a href="https://www.cyberciti.biz/faq/create-a-new-user-account-in-centos-7-8-linux/"><i><b>How to create new user</b></i></a></p>
 <p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/s2-users-cl-tools"><i><b>Managing Users via command-line</b></i></a></p>
