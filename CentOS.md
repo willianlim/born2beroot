@@ -1227,6 +1227,8 @@ Fail2Ban useful commands
 
 ->ufw
 <p><a href="https://unix.stackexchange.com/questions/182959/how-can-i-enable-ufw-automatically-on-boot"><i><b>ufw enable automatic</b></i></a></p>
+<p><a href="https://forums.linuxmint.com/viewtopic.php?t=331867"><i><b>UFW always disabled on boot!</b></i></a></p>
+<p><a href="https://bugs.launchpad.net/ubuntu/+source/ufw/+bug/1726856/comments/23"><i><b>Comment 23 for bug 1726856</b></i></a></p>
 
 ->lighttpd, php, mairadb
 <p><a href="https://www.tecmint.com/install-lighttpd-with-php-fpm-mariadb-on-centos/"><i><b>How to Install Lighttpd with PHP and MariaDB on CentOS/RHEL 8/7</b></i></a></p>
@@ -1252,3 +1254,7 @@ Fail2Ban useful commands
 <p><a href="https://www.cyberciti.biz/faq/how-to-protect-ssh-with-fail2ban-on-centos-8/"><i><b>How To Protect SSH With Fail2Ban on CentOS 8</b></i></a></p>
 <p><a href="https://www.youtube.com/watch?v=kgdoVeyoO2E"><i><b>Fail2ban Tutorial | How to Secure Your Server</b></i></a></p>
 <p><a href="https://guiatech.net/como-descobrir-seu-endereco-ip/"><i><b>How to find out your IP address</b></i></a></p>
+
+->Sha1sum
+<p><a href="https://www.howtoforge.com/linux-sha1sum-command/"><i><b>Linux sha1sum Command</b></i></a></p>
+<p><a href="https://www.arysontechnologies.com/blog/how-to-open-vdi-file/"><i><b>What is VDI File</b></i></a></p>
